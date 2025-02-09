@@ -13,6 +13,7 @@ import uploadConfig from './config/multer';
 import { ListByCategoryController } from './controllers/post/ListByCategoryController';
 import { DeletePostController } from './controllers/post/DeletePostController';
 import { ListPostController } from './controllers/post/ListPostController';
+import { UpdatePostController } from './controllers/post/UpdatePostController';
 
 const router = Router();
 
@@ -32,6 +33,7 @@ router.post('/post', isAuthenticated, upload.single('file'), new CreatePostContr
 router.get('/category/post', isAuthenticated, new ListByCategoryController().handle);
 router.delete('/post/', isAuthenticated, new DeletePostController().handle);
 router.get('/posts', isAuthenticated, new ListPostController().handle);
+router.put('/post', isAuthenticated, new UpdatePostController().handle);
 
 export default router;
 
