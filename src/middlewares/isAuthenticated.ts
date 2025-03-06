@@ -10,7 +10,7 @@ export function isAuthenticated(
     res: Response,
     next: NextFunction
 ) {
-        //Recebr o token
+        //Receber o token
         const authToken = req.headers.authorization;
 
         //Validar se o token está preenchido

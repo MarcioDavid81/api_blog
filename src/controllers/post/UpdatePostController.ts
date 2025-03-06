@@ -3,7 +3,9 @@ import { UpdatePostService } from "../../services/post/UpdatePostService";
 
 class UpdatePostController {
   async handle(req: Request, res: Response) {
-    const { post_id, title, subtitle, content } = req.body;
+    const { title, subtitle, content } = req.body;
+
+    const post_id = req.query.post_id as string;
 
     const updatePostService = new UpdatePostService();
 
