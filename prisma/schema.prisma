@@ -36,6 +36,7 @@ model Post {
   id         String   @id @default(cuid())
   title      String
   subtitle   String
+  slug       String?
   content    String
   banner     String
   date       DateTime
